@@ -58,7 +58,7 @@ namespace NjWap.exchange
                 Page.RegisterStartupScript("", " <script language='javascript'>alert('请输入正确的邮箱地址！'); </script>");
                 return;
             }
-            //保存
+            
         }
     }
 }
