@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NjWap", "NjWap\NjWap.csproj", "{5E240AD2-AE87-41F9-BABB-2732878EC47B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityManage", "EntityManage\EntityManage.csproj", "{51FF8471-161A-4BAD-AF7E-2BE2587E390C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E240AD2-AE87-41F9-BABB-2732878EC47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E240AD2-AE87-41F9-BABB-2732878EC47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E240AD2-AE87-41F9-BABB-2732878EC47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E240AD2-AE87-41F9-BABB-2732878EC47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FF8471-161A-4BAD-AF7E-2BE2587E390C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FF8471-161A-4BAD-AF7E-2BE2587E390C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FF8471-161A-4BAD-AF7E-2BE2587E390C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FF8471-161A-4BAD-AF7E-2BE2587E390C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

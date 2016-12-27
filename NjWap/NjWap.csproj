@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E240AD2-AE87-41F9-BABB-2732878EC47B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NjWap</RootNamespace>
+    <AssemblyName>NjWap</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.4.5.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AspNetPager.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="css\actionsheet.css" />
+    <Content Include="css\arrowlink.css" />
+    <Content Include="css\avatar.css" />
+    <Content Include="css\badge.css" />
+    <Content Include="css\basic.css" />
+    <Content Include="css\border.css" />
+    <Content Include="css\btn-group.css" />
+    <Content Include="css\btn-progress.css" />
+    <Content Include="css\btn.css" />
+    <Content Include="css\checkbox.css" />
+    <Content Include="css\dialog.css" />
+    <Content Include="css\form.css" />
+    <Content Include="css\frozen.css" />
+    <Content Include="css\full.css" />
+    <Content Include="css\global.css" />
+    <Content Include="css\grid.css" />
+    <Content Include="css\icon-full.css" />
+    <Content Include="css\icon.css" />
+    <Content Include="css\input.css" />
+    <Content Include="css\justify.css" />
+    <Content Include="css\label.css" />
+    <Content Include="css\layout.css" />
+    <Content Include="css\list.css" />
+    <Content Include="css\loading.css" />
+    <Content Include="css\mixin.css" />
+    <Content Include="css\newstips.css" />
+    <Content Include="css\notice.css" />
+    <Content Include="css\nowrap.css" />
+    <Content Include="css\panel.css" />
+    <Content Include="css\placehold.css" />
+    <Content Include="css\poptips.css" />
+    <Content Include="css\progress.css" />
+    <Content Include="css\radio.css" />
+    <Content Include="css\reddot.css" />
+    <Content Include="css\rem.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\searchbar.css" />
+    <Content Include="css\select.css" />
+    <Content Include="css\selector.css" />
+    <Content Include="css\slider.css" />
+    <Content Include="css\switch.css" />
+    <Content Include="css\tab.css" />
+    <Content Include="css\table.css" />
+    <Content Include="css\tag.css" />
+    <Content Include="css\tips-news.css" />
+    <Content Include="css\tips.css" />
+    <Content Include="css\tooltips.css" />
+    <Content Include="css\type.css" />
+    <Content Include="css\ui-btn-vip.css" />
+    <Content Include="css\ui-icon-qq.css" />
+    <Content Include="css\ui-icon-qqlevel.css" />
+    <Content Include="css\ui-icon-viplevel.css" />
+    <Content Include="css\ui-tooltips-vip.css" />
+    <Content Include="css\variable.css" />
+    <Content Include="css\vip.css" />
+    <Content Include="css\whitespace.css" />
+    <Content Include="exchange\Answer.aspx" />
+    <Content Include="exchange\css.css" />
+    <Content Include="exchange\My.aspx" />
+    <Content Include="html\css.css" />
+    <Content Include="In\css.css" />
+    <Content Include="In\List.aspx" />
+    <Content Include="exchange\Question.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="html\Detail.aspx" />
+    <Content Include="html\Index.aspx" />
+    <Content Include="html\List.aspx" />
+    <Content Include="img\foc-1.jpg" />
+    <Content Include="img\foc-2.jpg" />
+    <Content Include="img\kjzx.jpg" />
+    <Content Include="img\loading_sprite.png" />
+    <Content Include="img\loading_sprite_white.png" />
+    <Content Include="img\logo.jpg" />
+    <Content Include="img\vip\icon_qqlevel_sprite.png" />
+    <Content Include="img\vip\icon_vip.png" />
+    <Content Include="In\Login.aspx" />
+    <Content Include="In\Logout.aspx" />
+    <Content Include="In\question_list.html" />
+    <Content Include="In\Registe.aspx" />
+    <Content Include="In\T_Login.aspx" />
+    <Content Include="js\component\dialog.js" />
+    <Content Include="js\component\loading.js" />
+    <Content Include="js\component\scroll.js" />
+    <Content Include="js\component\tips.js" />
+    <Content Include="js\core\core.js" />
+    <Content Include="js\effect\cover.js" />
+    <Content Include="js\effect\parallax.js" />
+    <Content Include="js\frozen.js" />
+    <Content Include="lib\zepto.min.js" />
+    <Content Include="vedio\css.css" />
+    <Content Include="vedio\Detail.aspx" />
+    <Content Include="vedio\List.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebControlFooter.ascx" />
+    <Content Include="WebControlHeader.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Tool.cs" />
+    <Compile Include="exchange\Answer.aspx.cs">
+      <DependentUpon>Answer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="exchange\Answer.aspx.designer.cs">
+      <DependentUpon>Answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="exchange\My.aspx.cs">
+      <DependentUpon>My.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="exchange\My.aspx.designer.cs">
+      <DependentUpon>My.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="In\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="In\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="exchange\Question.aspx.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="exchange\Question.aspx.designer.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="html\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="html\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="html\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="html\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="In\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="In\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="In\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="In\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="In\Registe.aspx.cs">
+      <DependentUpon>Registe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="In\Registe.aspx.designer.cs">
+      <DependentUpon>Registe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="In\T_Login.aspx.cs">
+      <DependentUpon>T_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="In\T_Login.aspx.designer.cs">
+      <DependentUpon>T_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vedio\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vedio\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vedio\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vedio\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControlFooter.ascx.cs">
+      <DependentUpon>WebControlFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControlFooter.ascx.designer.cs">
+      <DependentUpon>WebControlFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControlHeader.ascx.cs">
+      <DependentUpon>WebControlHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControlHeader.ascx.designer.cs">
+      <DependentUpon>WebControlHeader.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="font\iconfont-full.ttf" />
+    <Content Include="font\iconfont.ttf" />
+    <Content Include="exchange\Web.config" />
+    <None Include="Properties\PublishProfiles\NjWap.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityManage\EntityManage.csproj">
+      <Project>{51ff8471-161a-4bad-af7e-2be2587e390c}</Project>
+      <Name>EntityManage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51361</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51361/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
