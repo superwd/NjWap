@@ -53,7 +53,7 @@
                  <h3><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h3> 
             </div>
             <div class="container_content">
-                <div class="details">
+                <div class="details" style="">
                     <asp:Literal ID="ltCon" runat="server"></asp:Literal>
                     <%--<div id="location"><a href="../../" title="首页" class="CurrChnlCls">首页</a>&nbsp;&gt;&nbsp;<a href="../" title="科技资讯" class="CurrChnlCls">科技资讯</a></div>
                     <h1>这台园艺多功能机创新突破三大关键技术</h1>

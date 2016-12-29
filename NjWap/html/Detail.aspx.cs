@@ -39,7 +39,8 @@ namespace NjWap.html
                     ltCon.Text += "<div id='location'><a href='' title='首页' class='CurrChnlCls'>首页</a>&nbsp;&gt;&nbsp;<a href='List.aspx?CID=" + tc.CID + "' title='" + ui.TITLE + "' class='CurrChnlCls'>" + ui.TITLE + "</a></div>";
 
                     ltCon.Text += "<h1>" + tc.TITLE + "</h1><p class='public_time'>" + tc.PUBDATE + "</p>" +
-                        " <div class='details_content'>" + tc.TEXT + "</div><div style='height: 50px'></div>";
+                        " <div class='details_content'>" + tc.TEXT.Replace("<img","<img style='width:330px'") + "</div><div style='height: 50px'></div>";
+
                 }
                 catch (Exception ex)
                 {
