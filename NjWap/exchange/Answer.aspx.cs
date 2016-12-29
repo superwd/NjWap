@@ -53,7 +53,7 @@ namespace NjWap.exchange
           
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
                         throw;
@@ -66,7 +66,15 @@ namespace NjWap.exchange
         protected string GetUserName(string Uid)
         {
             sys_user user = nj.sys_user.Where(c => c.USER_ID == Uid).FirstOrDefault();
-            return user.NAME;
+            if (user!=null)
+            {
+                return user.NAME;
+            }
+            else
+            {
+                return "无";
+            }
+            
         }
 
         protected void btnSub_Click(object sender, EventArgs e)
