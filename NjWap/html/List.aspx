@@ -61,14 +61,14 @@
             </div>
             <div class="container_content">
                 <ul class="textlist pb60">
-                    <li class="first clearfix">
+                    
                         <%--<img src="../img/kjzx.jpg" class="left first_img"></img>
                         <div class="right first_content">
                             <h3>这台园艺多功能机创新突破三大关键技术</h3>
                             <p>近日，我国首台园艺固肥施用、残秧处理多功能机正，式亮相江苏省高效设施农业机械化现场会。该机由南京农机化研...</p>
                         </div> --%>
                             <asp:Literal ID="ltTop" runat="server"></asp:Literal>
-                      </li>
+                      
                       <%--<asp:Literal ID="ltHead" runat="server"></asp:Literal>--%>
                       <%--<li class="first">
                         <a href="#"><img src="../img/kjzx.jpg"></a>
