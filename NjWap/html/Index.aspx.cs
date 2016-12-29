@@ -42,7 +42,7 @@ namespace NjWap.html
                 {
                     foreach (DataRow dr in dtc.Rows)
                     {
-                        ltSy.Text += "<li><a href='Detail.aspx?ConId=" + dr["Content_ID"].ToString() + "'><span style='background-image:url(" + url + "/NJ_Stnet/uploadFiles/uploadImgs/contentImg/" + dr["IMGURL"].ToString() + ")'></span></a></li>";
+                        ltSy.Text += "<li><a href='Detail.aspx?ConId=" + dr["Content_ID"].ToString() + "'><span style='background-image:url(" + url + "/NJ_Stnet/" + dr["IMGURL"].ToString() + ")'></span></a></li>";
                     }
 
                 }
