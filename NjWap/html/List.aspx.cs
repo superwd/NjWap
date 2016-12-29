@@ -113,8 +113,8 @@ namespace NjWap.html
                             txt = dtc.Rows[0]["Text"].ToString();
                         }
 
-                        ltTop.Text = "<img style='width:85px;height:99px' src='" + url + "/NJ_Stnet/uploadFiles/uploadImgs/contentImg/" + dtc.Rows[0]["IMGURL"].ToString() + "' class='left first_img'></img><div class='right first_content'>"
-                                    + "<h3><a href='Detail.aspx?ConId=" + dtc.Rows[0]["CONTENT_ID"].ToString() + "'>" + dtc.Rows[0]["Title"].ToString() + "</a></h3> <p>" + txt + "</p></div>";
+                        ltTop.Text = "<li class='first clearfix'><img style='width:85px;height:99px' src='" + url + "/NJ_Stnet/uploadFiles/uploadImgs/contentImg/" + dtc.Rows[0]["IMGURL"].ToString() + "' class='left first_img'></img><div class='right first_content'>"
+                                    + "<h3><a href='Detail.aspx?ConId=" + dtc.Rows[0]["CONTENT_ID"].ToString() + "'>" + dtc.Rows[0]["Title"].ToString() + "</a></h3> <p>" + dtc.Rows[0]["Title"].ToString() + "</p></div></li>";
 
                         AspNetPager1.PageSize = 15;
                         int totalRecord = 0;
@@ -129,7 +129,7 @@ namespace NjWap.html
                         {
                             ltTop.Visible = true;
                         }
-                        IQueryable<t_opt_stnet_content> result2 = cu.LoadPagerEntities(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex, out totalRecord, eps, false, c1 => c1.PUBDATE);
+                        DataTable result2 = cu.LoadPagerEntities(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex, out totalRecord, eps, false, c1 => c1.PUBDATE).ToDataTable();
                         this.AspNetPager1.RecordCount = totalRecord;
                         rptList.DataSource = result2;
                         rptList.DataBind();
