@@ -11,7 +11,7 @@ namespace NjWap.In
 {
     public partial class List : System.Web.UI.Page
     {
-        BaseRepository<t_opt_stnet_exchange> exc = new BaseRepository<t_opt_stnet_exchange>();
+        BaseRepository<T_OPT_STNET_EXCHANGE> exc = new BaseRepository<T_OPT_STNET_EXCHANGE>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,14 +33,14 @@ namespace NjWap.In
         {
             AspNetPager1.PageSize = 15;
             int totalRecord = 0;
-            var eps = DynamicLinqExpressions.True<t_opt_stnet_exchange>();
+            var eps = DynamicLinqExpressions.True<T_OPT_STNET_EXCHANGE>();
             eps = eps.And(c => c.PID == "");
             if (Context.User.Identity.Name != "" && Request["Uid"] != null)
             {
                 string Uid = Request["Uid"];
                 eps = eps.And(c => c.CREATEUSER == Uid);
             }
-            IQueryable<t_opt_stnet_exchange> result = exc.LoadPagerEntities(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex, out totalRecord, eps, false, c1 => c1.CREATEDATE);
+            IQueryable<T_OPT_STNET_EXCHANGE> result = exc.LoadPagerEntities(AspNetPager1.PageSize, AspNetPager1.CurrentPageIndex, out totalRecord, eps, false, c1 => c1.CREATEDATE);
             this.AspNetPager1.RecordCount = totalRecord;
             rptList.DataSource = result;
             rptList.DataBind();

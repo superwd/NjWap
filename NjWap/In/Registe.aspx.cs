@@ -12,8 +12,8 @@ namespace NjWap.In
 {
     public partial class Registe : System.Web.UI.Page
     {
-        BaseRepository<t_opt_stnet_cut> cut = new BaseRepository<t_opt_stnet_cut>();
-        BaseRepository<t_opt_stnet_nation> nat = new BaseRepository<t_opt_stnet_nation>();
+        BaseRepository<T_OPT_STNET_CUT> cut = new BaseRepository<T_OPT_STNET_CUT>();
+        BaseRepository<T_OPT_STNET_NATION> nat = new BaseRepository<T_OPT_STNET_NATION>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,8 +28,8 @@ namespace NjWap.In
             try
             {
                 //省市县
-                var epsc = DynamicLinqExpressions.True<t_opt_stnet_nation>();
-                IQueryable<t_opt_stnet_nation> pro = nat.LoadEntities(epsc);
+                var epsc = DynamicLinqExpressions.True<T_OPT_STNET_NATION>();
+                IQueryable<T_OPT_STNET_NATION> pro = nat.LoadEntities(epsc);
                 DataTable dtp = pro.Where(a => a.parent_id == 1).ToDataTable();
                 drpPro.DataSource = dtp;
                 drpPro.DataTextField = "province";
@@ -52,8 +52,8 @@ namespace NjWap.In
                 drpX.DataBind();
 
                 //产业
-                var eps = DynamicLinqExpressions.True<t_opt_stnet_cut>();
-                IQueryable<t_opt_stnet_cut> result = cut.LoadEntities(eps);
+                var eps = DynamicLinqExpressions.True<T_OPT_STNET_CUT>();
+                IQueryable<T_OPT_STNET_CUT> result = cut.LoadEntities(eps);
                 DataTable dt = result.Where(a => a.pid == "46").ToDataTable();
                 chkCy.DataSource = dt;
                 chkCy.DataTextField = "name";
@@ -125,8 +125,8 @@ namespace NjWap.In
 
         protected void drpPro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var epsc = DynamicLinqExpressions.True<t_opt_stnet_nation>();
-            IQueryable<t_opt_stnet_nation> pro = nat.LoadEntities(epsc);
+            var epsc = DynamicLinqExpressions.True<T_OPT_STNET_NATION>();
+            IQueryable<T_OPT_STNET_NATION> pro = nat.LoadEntities(epsc);
             int c = int.Parse(drpPro.SelectedValue);
             DataTable dtc = pro.Where(a => a.parent_id == c).ToDataTable();
             if (dtc.Rows[0]["city"].ToString()!="")
@@ -152,8 +152,8 @@ namespace NjWap.In
 
         protected void drpCity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var epsc = DynamicLinqExpressions.True<t_opt_stnet_nation>();
-            IQueryable<t_opt_stnet_nation> pro = nat.LoadEntities(epsc);
+            var epsc = DynamicLinqExpressions.True<T_OPT_STNET_NATION>();
+            IQueryable<T_OPT_STNET_NATION> pro = nat.LoadEntities(epsc);
             if (drpCity.SelectedValue != "-1")
             {
                 int x = int.Parse(drpCity.SelectedValue);
