@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class sys_user
+    public partial class SYS_USER
     {
         public string USER_ID { get; set; }
         public string USERNAME { get; set; }

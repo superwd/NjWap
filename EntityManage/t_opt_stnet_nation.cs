@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class t_opt_stnet_nation
+    public partial class T_OPT_STNET_NATION
     {
         public long id { get; set; }
         public string code { get; set; }

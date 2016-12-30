@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a02268d2560f4885be006b89d9f44958" Name="Diagram1">
-        <EntityTypeShape EntityType="njModel.t_opt_stnet_exchange" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="njModel.t_opt_stnet_content" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="njModel.category_show_view" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="njModel.t_opt_stnet_cut" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="njModel.t_info_stnet_category" Width="1.5" PointX="8.875" PointY="0.75" />
-        <EntityTypeShape EntityType="njModel.t_opt_stnet_nation" Width="1.5" PointX="0.75" PointY="4.5" />
-        <EntityTypeShape EntityType="njModel.sys_user" Width="1.5" PointX="2.75" PointY="4.5" />
-        <EntityTypeShape EntityType="njModel.vedio_show_view" Width="1.5" PointX="4.75" PointY="4.5" />
-      </Diagram>
+        <EntityTypeShape EntityType="njModel.category_show_view" Width="1.75" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="njModel.vedio_show_view" Width="1.5" PointX="4.75" PointY="4.125" />
+        <EntityTypeShape EntityType="njModel.T_OPT_STNET_CONTENT" Width="1.5" PointX="6.75" PointY="4.125" />
+        <EntityTypeShape EntityType="njModel.T_INFO_STNET_CATEGORY" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="njModel.SYS_USER" Width="1.5" PointX="2.75" PointY="4.125" />
+        <EntityTypeShape EntityType="njModel.T_OPT_STNET_CUT" Width="1.5" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="njModel.T_OPT_STNET_EXCHANGE" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="njModel.T_OPT_STNET_NATION" Width="1.5" PointX="7.125" PointY="0.625" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class t_info_stnet_category
+    public partial class T_INFO_STNET_CATEGORY
     {
         public string CATEGORY_ID { get; set; }
         public string TITLE { get; set; }

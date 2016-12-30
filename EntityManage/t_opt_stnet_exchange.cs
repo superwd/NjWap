@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class t_opt_stnet_exchange
+    public partial class T_OPT_STNET_EXCHANGE
     {
         public string ID { get; set; }
         public string TITLE { get; set; }

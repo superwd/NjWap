@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class t_opt_stnet_cut
+    public partial class T_OPT_STNET_CUT
     {
         public string id { get; set; }
         public string pid { get; set; }

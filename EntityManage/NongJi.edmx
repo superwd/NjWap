@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="njModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityType Name="sys_user">
+        <EntityType Name="SYS_USER">
           <Key>
             <PropertyRef Name="USER_ID" />
           </Key>
@@ -32,7 +32,7 @@
           <Property Name="EDUCATION" Type="varchar" MaxLength="255" />
           <Property Name="STTRAIN_ROLE" Type="varchar" MaxLength="32" />
         </EntityType>
-        <EntityType Name="t_info_stnet_category">
+        <EntityType Name="T_INFO_STNET_CATEGORY">
           <Key>
             <PropertyRef Name="CATEGORY_ID" />
           </Key>
@@ -47,7 +47,7 @@
           <Property Name="OUTERURL" Type="varchar" MaxLength="255" />
           <Property Name="INNERURL" Type="varchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_content">
+        <EntityType Name="T_OPT_STNET_CONTENT">
           <Key>
             <PropertyRef Name="CONTENT_ID" />
           </Key>
@@ -62,7 +62,7 @@
           <Property Name="DELESTATE" Type="varchar" MaxLength="2" />
           <Property Name="IMGURL" Type="varchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_cut">
+        <EntityType Name="T_OPT_STNET_CUT">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -72,7 +72,7 @@
           <Property Name="path" Type="varchar" MaxLength="255" />
           <Property Name="module" Type="varchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_exchange">
+        <EntityType Name="T_OPT_STNET_EXCHANGE">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -89,7 +89,7 @@
           <Property Name="DISTRICT" Type="varchar" MaxLength="255" />
           <Property Name="PCD" Type="varchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_nation">
+        <EntityType Name="T_OPT_STNET_NATION">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -100,7 +100,7 @@
           <Property Name="parent_id" Type="bigint" />
           <Property Name="create_time" Type="datetime" Precision="0" />
           <Property Name="district" Type="varchar" MaxLength="40" />
-          <Property Name="last_update_time" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="last_update_time" Type="timestamp" Precision="0" Nullable="false" />
           <Property Name="operator" Type="bigint" />
           <Property Name="operator_ip" Type="varchar" MaxLength="25" />
         </EntityType>
@@ -134,12 +134,12 @@
           <Property Name="VEDIOURL" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityContainer Name="njModelStoreContainer">
-          <EntitySet Name="sys_user" EntityType="Self.sys_user" Schema="njtg" store:Type="Tables" />
-          <EntitySet Name="t_info_stnet_category" EntityType="Self.t_info_stnet_category" Schema="njtg" store:Type="Tables" />
-          <EntitySet Name="t_opt_stnet_content" EntityType="Self.t_opt_stnet_content" Schema="njtg" store:Type="Tables" />
-          <EntitySet Name="t_opt_stnet_cut" EntityType="Self.t_opt_stnet_cut" Schema="njtg" store:Type="Tables" />
-          <EntitySet Name="t_opt_stnet_exchange" EntityType="Self.t_opt_stnet_exchange" Schema="njtg" store:Type="Tables" />
-          <EntitySet Name="t_opt_stnet_nation" EntityType="Self.t_opt_stnet_nation" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="T_INFO_STNET_CATEGORY" EntityType="Self.T_INFO_STNET_CATEGORY" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="T_OPT_STNET_CONTENT" EntityType="Self.T_OPT_STNET_CONTENT" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="T_OPT_STNET_CUT" EntityType="Self.T_OPT_STNET_CUT" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="T_OPT_STNET_EXCHANGE" EntityType="Self.T_OPT_STNET_EXCHANGE" Schema="njtg" store:Type="Tables" />
+          <EntitySet Name="T_OPT_STNET_NATION" EntityType="Self.T_OPT_STNET_NATION" Schema="njtg" store:Type="Tables" />
           <EntitySet Name="category_show_view" EntityType="Self.category_show_view" store:Type="Views" store:Schema="njtg">
             <DefiningQuery>SELECT
 `category_show_view`.`MODULE_ID`, 
@@ -169,33 +169,41 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
     <edmx:ConceptualModels>
       <Schema Namespace="njModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="njEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="t_opt_stnet_exchange" EntityType="njModel.t_opt_stnet_exchange" />
-          <EntitySet Name="t_opt_stnet_content" EntityType="njModel.t_opt_stnet_content" />
           <EntitySet Name="category_show_view" EntityType="njModel.category_show_view" />
-          <EntitySet Name="t_opt_stnet_cut" EntityType="njModel.t_opt_stnet_cut" />
-          <EntitySet Name="t_info_stnet_category" EntityType="njModel.t_info_stnet_category" />
-          <EntitySet Name="t_opt_stnet_nation" EntityType="njModel.t_opt_stnet_nation" />
-          <EntitySet Name="sys_user" EntityType="njModel.sys_user" />
           <EntitySet Name="vedio_show_view" EntityType="njModel.vedio_show_view" />
-        </EntityContainer>
-        <EntityType Name="t_opt_stnet_exchange">
+          <EntitySet Name="T_OPT_STNET_CONTENT" EntityType="njModel.T_OPT_STNET_CONTENT" />
+          <EntitySet Name="T_INFO_STNET_CATEGORY" EntityType="njModel.T_INFO_STNET_CATEGORY" />
+          <EntitySet Name="SYS_USER" EntityType="njModel.SYS_USER" />
+          <EntitySet Name="T_OPT_STNET_CUT" EntityType="njModel.T_OPT_STNET_CUT" />
+          <EntitySet Name="T_OPT_STNET_EXCHANGE" EntityType="njModel.T_OPT_STNET_EXCHANGE" />
+          <EntitySet Name="T_OPT_STNET_NATION" EntityType="njModel.T_OPT_STNET_NATION" />
+          </EntityContainer>
+        <EntityType Name="category_show_view">
+          <Key>
+            <PropertyRef Name="CATEGORY_ID" />
+          </Key>
+          <Property Name="MODULE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DESP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORY_ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMGURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vedio_show_view">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="TITLE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
-          <Property Name="CONTENT" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="COURSE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DESP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IMGURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SORT" Type="Int32" />
           <Property Name="CREATEDATE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="STATE" Type="Int32" />
-          <Property Name="PID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="CREATEUSER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="INDUSTRY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="PROVINCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DISTRICT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="PCD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DELESTATE" Type="Int32" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VEDIOURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_content">
+        <EntityType Name="T_OPT_STNET_CONTENT">
           <Key>
             <PropertyRef Name="CONTENT_ID" />
           </Key>
@@ -210,27 +218,7 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
           <Property Name="DELESTATE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="IMGURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="category_show_view">
-          <Key>
-            <PropertyRef Name="CATEGORY_ID" />
-          </Key>
-          <Property Name="MODULE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DESP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="CATEGORY_ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="IMGURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="t_opt_stnet_cut">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="pid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="module" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="t_info_stnet_category">
+        <EntityType Name="T_INFO_STNET_CATEGORY">
           <Key>
             <PropertyRef Name="CATEGORY_ID" />
           </Key>
@@ -245,22 +233,7 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
           <Property Name="OUTERURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="INNERURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="t_opt_stnet_nation">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="province" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="parent_id" Type="Int64" />
-          <Property Name="create_time" Type="DateTime" />
-          <Property Name="district" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="last_update_time" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="operator" Type="Int64" />
-          <Property Name="operator_ip" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="sys_user">
+        <EntityType Name="SYS_USER">
           <Key>
             <PropertyRef Name="USER_ID" />
           </Key>
@@ -287,48 +260,84 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
           <Property Name="EDUCATION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="STTRAIN_ROLE" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="vedio_show_view">
+        <EntityType Name="T_OPT_STNET_CUT">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="module" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_OPT_STNET_EXCHANGE">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="COURSE_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DESP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="IMGURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="SORT" Type="Int32" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TITLE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="CREATEDATE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STATE" Type="Int32" />
+          <Property Name="PID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
           <Property Name="CREATEUSER" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DELESTATE" Type="Int32" />
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="VEDIOURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="INDUSTRY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PROVINCE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DISTRICT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PCD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        <EntityType Name="T_OPT_STNET_NATION">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="province" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="parent_id" Type="Int64" />
+          <Property Name="create_time" Type="DateTime" />
+          <Property Name="district" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="last_update_time" Type="DateTime" Nullable="false" />
+          <Property Name="operator" Type="Int64" />
+          <Property Name="operator_ip" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="njModelStoreContainer" CdmEntityContainer="njEntities">
-          <EntitySetMapping Name="t_opt_stnet_exchange">
-            <EntityTypeMapping TypeName="njModel.t_opt_stnet_exchange">
-              <MappingFragment StoreEntitySet="t_opt_stnet_exchange">
-                <ScalarProperty Name="PCD" ColumnName="PCD" />
-                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
-                <ScalarProperty Name="CITY" ColumnName="CITY" />
-                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
-                <ScalarProperty Name="INDUSTRY" ColumnName="INDUSTRY" />
-                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
-                <ScalarProperty Name="PID" ColumnName="PID" />
-                <ScalarProperty Name="STATE" ColumnName="STATE" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <EntitySetMapping Name="category_show_view">
+            <EntityTypeMapping TypeName="njModel.category_show_view">
+              <MappingFragment StoreEntitySet="category_show_view">
+                <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="DESP" ColumnName="DESP" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="t_opt_stnet_content">
-            <EntityTypeMapping TypeName="njModel.t_opt_stnet_content">
-              <MappingFragment StoreEntitySet="t_opt_stnet_content">
+          <EntitySetMapping Name="vedio_show_view">
+            <EntityTypeMapping TypeName="njModel.vedio_show_view">
+              <MappingFragment StoreEntitySet="vedio_show_view">
+                <ScalarProperty Name="VEDIOURL" ColumnName="VEDIOURL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DELESTATE" ColumnName="DELESTATE" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="SORT" ColumnName="SORT" />
+                <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
+                <ScalarProperty Name="DESP" ColumnName="DESP" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="COURSE_ID" ColumnName="COURSE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_OPT_STNET_CONTENT">
+            <EntityTypeMapping TypeName="njModel.T_OPT_STNET_CONTENT">
+              <MappingFragment StoreEntitySet="T_OPT_STNET_CONTENT">
                 <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
                 <ScalarProperty Name="DELESTATE" ColumnName="DELESTATE" />
                 <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
@@ -342,31 +351,9 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="category_show_view">
-            <EntityTypeMapping TypeName="njModel.category_show_view">
-              <MappingFragment StoreEntitySet="category_show_view">
-                <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
-                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
-                <ScalarProperty Name="DESP" ColumnName="DESP" />
-                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
-                <ScalarProperty Name="MODULE_ID" ColumnName="MODULE_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="t_opt_stnet_cut">
-            <EntityTypeMapping TypeName="njModel.t_opt_stnet_cut">
-              <MappingFragment StoreEntitySet="t_opt_stnet_cut">
-                <ScalarProperty Name="module" ColumnName="module" />
-                <ScalarProperty Name="path" ColumnName="path" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="pid" ColumnName="pid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="t_info_stnet_category">
-            <EntityTypeMapping TypeName="njModel.t_info_stnet_category">
-              <MappingFragment StoreEntitySet="t_info_stnet_category">
+          <EntitySetMapping Name="T_INFO_STNET_CATEGORY">
+            <EntityTypeMapping TypeName="njModel.T_INFO_STNET_CATEGORY">
+              <MappingFragment StoreEntitySet="T_INFO_STNET_CATEGORY">
                 <ScalarProperty Name="INNERURL" ColumnName="INNERURL" />
                 <ScalarProperty Name="OUTERURL" ColumnName="OUTERURL" />
                 <ScalarProperty Name="DELESTATE" ColumnName="DELESTATE" />
@@ -380,25 +367,9 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="t_opt_stnet_nation">
-            <EntityTypeMapping TypeName="njModel.t_opt_stnet_nation">
-              <MappingFragment StoreEntitySet="t_opt_stnet_nation">
-                <ScalarProperty Name="operator_ip" ColumnName="operator_ip" />
-                <ScalarProperty Name="operator" ColumnName="operator" />
-                <ScalarProperty Name="last_update_time" ColumnName="last_update_time" />
-                <ScalarProperty Name="district" ColumnName="district" />
-                <ScalarProperty Name="create_time" ColumnName="create_time" />
-                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
-                <ScalarProperty Name="city" ColumnName="city" />
-                <ScalarProperty Name="province" ColumnName="province" />
-                <ScalarProperty Name="code" ColumnName="code" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sys_user">
-            <EntityTypeMapping TypeName="njModel.sys_user">
-              <MappingFragment StoreEntitySet="sys_user">
+          <EntitySetMapping Name="SYS_USER">
+            <EntityTypeMapping TypeName="njModel.SYS_USER">
+              <MappingFragment StoreEntitySet="SYS_USER">
                 <ScalarProperty Name="STTRAIN_ROLE" ColumnName="STTRAIN_ROLE" />
                 <ScalarProperty Name="EDUCATION" ColumnName="EDUCATION" />
                 <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
@@ -424,23 +395,52 @@ FROM `vedio_show_view` AS `vedio_show_view`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vedio_show_view">
-            <EntityTypeMapping TypeName="njModel.vedio_show_view">
-              <MappingFragment StoreEntitySet="vedio_show_view">
-                <ScalarProperty Name="VEDIOURL" ColumnName="VEDIOURL" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DELESTATE" ColumnName="DELESTATE" />
-                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
-                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
-                <ScalarProperty Name="SORT" ColumnName="SORT" />
-                <ScalarProperty Name="IMGURL" ColumnName="IMGURL" />
-                <ScalarProperty Name="DESP" ColumnName="DESP" />
-                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
-                <ScalarProperty Name="COURSE_ID" ColumnName="COURSE_ID" />
+          <EntitySetMapping Name="T_OPT_STNET_CUT">
+            <EntityTypeMapping TypeName="njModel.T_OPT_STNET_CUT">
+              <MappingFragment StoreEntitySet="T_OPT_STNET_CUT">
+                <ScalarProperty Name="module" ColumnName="module" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="T_OPT_STNET_EXCHANGE">
+            <EntityTypeMapping TypeName="njModel.T_OPT_STNET_EXCHANGE">
+              <MappingFragment StoreEntitySet="T_OPT_STNET_EXCHANGE">
+                <ScalarProperty Name="PCD" ColumnName="PCD" />
+                <ScalarProperty Name="DISTRICT" ColumnName="DISTRICT" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+                <ScalarProperty Name="INDUSTRY" ColumnName="INDUSTRY" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_OPT_STNET_NATION">
+            <EntityTypeMapping TypeName="njModel.T_OPT_STNET_NATION">
+              <MappingFragment StoreEntitySet="T_OPT_STNET_NATION">
+                <ScalarProperty Name="operator_ip" ColumnName="operator_ip" />
+                <ScalarProperty Name="operator" ColumnName="operator" />
+                <ScalarProperty Name="last_update_time" ColumnName="last_update_time" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

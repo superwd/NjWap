@@ -25,13 +25,13 @@ namespace EntityManage
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<t_opt_stnet_exchange> t_opt_stnet_exchange { get; set; }
-        public DbSet<t_opt_stnet_content> t_opt_stnet_content { get; set; }
         public DbSet<category_show_view> category_show_view { get; set; }
-        public DbSet<t_opt_stnet_cut> t_opt_stnet_cut { get; set; }
-        public DbSet<t_info_stnet_category> t_info_stnet_category { get; set; }
-        public DbSet<t_opt_stnet_nation> t_opt_stnet_nation { get; set; }
-        public DbSet<sys_user> sys_user { get; set; }
         public DbSet<vedio_show_view> vedio_show_view { get; set; }
+        public DbSet<T_OPT_STNET_CONTENT> T_OPT_STNET_CONTENT { get; set; }
+        public DbSet<T_INFO_STNET_CATEGORY> T_INFO_STNET_CATEGORY { get; set; }
+        public DbSet<SYS_USER> SYS_USER { get; set; }
+        public DbSet<T_OPT_STNET_CUT> T_OPT_STNET_CUT { get; set; }
+        public DbSet<T_OPT_STNET_EXCHANGE> T_OPT_STNET_EXCHANGE { get; set; }
+        public DbSet<T_OPT_STNET_NATION> T_OPT_STNET_NATION { get; set; }
     }
 }

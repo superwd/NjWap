@@ -12,7 +12,7 @@ namespace EntityManage
     using System;
     using System.Collections.Generic;
     
-    public partial class t_opt_stnet_content
+    public partial class T_OPT_STNET_CONTENT
     {
         public string CONTENT_ID { get; set; }
         public string TITLE { get; set; }
