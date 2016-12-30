@@ -17,7 +17,7 @@ namespace NjWap.exchange
 {
     public partial class Answer : System.Web.UI.Page
     {
-        BaseRepository<t_opt_stnet_exchange> exc = new BaseRepository<t_opt_stnet_exchange>();
+        BaseRepository<T_OPT_STNET_EXCHANGE> exc = new BaseRepository<T_OPT_STNET_EXCHANGE>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,19 +29,19 @@ namespace NjWap.exchange
                     {
                         if (Context.User.Identity.Name != "")
                         {
-                            sys_user u = nj.sys_user.Where(c => c.USER_ID == Context.User.Identity.Name).FirstOrDefault();
+                            SYS_USER u = nj.SYS_USER.Where(c => c.USER_ID == Context.User.Identity.Name).FirstOrDefault();
                             lblSf.Text = "您好：【<a href = '/exchange/My.aspx?Id=" + Context.User.Identity.Name + "' >" + u.NAME + "</a>】";
                         }
                         string Id = Request["ID"];
-                        t_opt_stnet_exchange se = nj.t_opt_stnet_exchange.Where(c => c.ID == Id).FirstOrDefault();
+                        T_OPT_STNET_EXCHANGE se = nj.T_OPT_STNET_EXCHANGE.Where(c => c.ID == Id).FirstOrDefault();
                         lblTitle.Text = se.TITLE;
                         lblDesp.Text = se.CONTENT;
-                        sys_user user = nj.sys_user.Where(c => c.USER_ID == se.CREATEUSER).FirstOrDefault();
+                        SYS_USER user = nj.SYS_USER.Where(c => c.USER_ID == se.CREATEUSER).FirstOrDefault();
                         if (user != null)
                         {
                             lblUser.Text = user.NAME + " / " + se.CREATEDATE;
-                            var eps = DynamicLinqExpressions.True<t_opt_stnet_exchange>();
-                            IQueryable<t_opt_stnet_exchange> result = exc.LoadEntities(eps);
+                            var eps = DynamicLinqExpressions.True<T_OPT_STNET_EXCHANGE>();
+                            IQueryable<T_OPT_STNET_EXCHANGE> result = exc.LoadEntities(eps);
                             DataTable dt = result.Where(a => a.PID == Id).OrderByDescending(a => a.CREATEDATE).ToDataTable();
                             if (dt.Rows.Count > 0)
                             {
@@ -65,7 +65,7 @@ namespace NjWap.exchange
 
         protected string GetUserName(string Uid)
         {
-            sys_user user = nj.sys_user.Where(c => c.USER_ID == Uid).FirstOrDefault();
+            SYS_USER user = nj.SYS_USER.Where(c => c.USER_ID == Uid).FirstOrDefault();
             if (user!=null)
             {
                 return user.NAME;

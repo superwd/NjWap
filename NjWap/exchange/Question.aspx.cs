@@ -18,14 +18,14 @@ namespace NjWap.exchange
 {
     public partial class Question : System.Web.UI.Page
     {
-        BaseRepository<t_opt_stnet_cut> cut = new BaseRepository<t_opt_stnet_cut>();
+        BaseRepository<T_OPT_STNET_CUT> cut = new BaseRepository<T_OPT_STNET_CUT>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                var eps = DynamicLinqExpressions.True<t_opt_stnet_cut>();
-                IQueryable<t_opt_stnet_cut> result = cut.LoadEntities(eps);
+                var eps = DynamicLinqExpressions.True<T_OPT_STNET_CUT>();
+                IQueryable<T_OPT_STNET_CUT> result = cut.LoadEntities(eps);
                 DataTable dt = result.Where(a => a.pid == "46").ToDataTable();
                 drpCy.DataSource = dt;
                 drpCy.DataTextField = "name";
@@ -34,7 +34,7 @@ namespace NjWap.exchange
 
                 if (Context.User.Identity.Name != "")
                 {
-                    sys_user u = nj.sys_user.Where(c => c.USER_ID == Context.User.Identity.Name).FirstOrDefault();
+                    SYS_USER u = nj.SYS_USER.Where(c => c.USER_ID == Context.User.Identity.Name).FirstOrDefault();
                     lblSf.Text = "您好：【<a href = '/exchange/My.aspx?Id=" + Context.User.Identity.Name + "' >" + u.NAME + "</a>】";
                 }
 
@@ -43,13 +43,13 @@ namespace NjWap.exchange
                     string address = "";
                     string[] Addr = Request.Cookies["Addr"].Value.ToString().Split('|');
                     int provice = int.Parse(Addr[0]);
-                    t_opt_stnet_nation tsn = nj.t_opt_stnet_nation.Where(c => c.id == provice).FirstOrDefault();
+                    T_OPT_STNET_NATION tsn = nj.T_OPT_STNET_NATION.Where(c => c.id == provice).FirstOrDefault();
                     address += tsn.province+" ";
                     int city = int.Parse(Addr[1]);
-                    tsn = nj.t_opt_stnet_nation.Where(c => c.id == city).FirstOrDefault();
+                    tsn = nj.T_OPT_STNET_NATION.Where(c => c.id == city).FirstOrDefault();
                     address += tsn.city + " ";
                     int district = int.Parse(Addr[2]);
-                    tsn = nj.t_opt_stnet_nation.Where(c => c.id == district).FirstOrDefault();
+                    tsn = nj.T_OPT_STNET_NATION.Where(c => c.id == district).FirstOrDefault();
                     address += tsn.district + " ";
                     this.txtAddr.Text = address;
                 }

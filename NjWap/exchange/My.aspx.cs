@@ -20,7 +20,7 @@ namespace NjWap.exchange
                 {
                     string Id = Request["Id"];
                     lbMyQuestion.PostBackUrl = "/In/List.aspx?Uid=" + Id;
-                    sys_user user = nj.sys_user.Where(a => a.USER_ID == Id).FirstOrDefault();
+                    SYS_USER user = nj.SYS_USER.Where(a => a.USER_ID == Id).FirstOrDefault();
                     if (user != null)
                     {
                         this.txtMobile.Text = user.PHONE;
