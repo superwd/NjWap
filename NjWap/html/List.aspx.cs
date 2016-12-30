@@ -13,7 +13,7 @@ namespace NjWap.html
     public partial class List : System.Web.UI.Page
     {
         BaseRepository<category_show_view> bu = new BaseRepository<category_show_view>();
-        BaseRepository<t_opt_stnet_content> cu = new BaseRepository<t_opt_stnet_content>();
+        BaseRepository<T_OPT_STNET_CONTENT> cu = new BaseRepository<T_OPT_STNET_CONTENT>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace NjWap.html
         //        {
         //            string HeadList = "";
         //            lblName.Text = dt.Rows[0]["Title"].ToString();
-        //            var epsc = DynamicLinqExpressions.True<t_opt_stnet_content>();
+        //            var epsc = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
         //            epsc = epsc.And(c => c.CID == cateid);
         //            DataTable dtc = cu.LoadEntities(epsc).ToDataTable();
         //            if (dtc.Rows.Count > 0)
@@ -94,11 +94,11 @@ namespace NjWap.html
                 string url = ConfigurationManager.AppSettings["Url"];
                 try
                 {                   
-                    t_info_stnet_category ui = nj.t_info_stnet_category.Where(a => a.CATEGORY_ID == cateid).FirstOrDefault();
+                    T_INFO_STNET_CATEGORY ui = nj.T_INFO_STNET_CATEGORY.Where(a => a.CATEGORY_ID == cateid).FirstOrDefault();
                     lblName.Text = ui.TITLE;
-                    var epsc = DynamicLinqExpressions.True<t_opt_stnet_content>();
+                    var epsc = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
                     epsc = epsc.And(c => c.CID == cateid);
-                    IQueryable<t_opt_stnet_content> result = cu.LoadEntities(epsc);
+                    IQueryable<T_OPT_STNET_CONTENT> result = cu.LoadEntities(epsc);
                     DataTable dtc = result.OrderByDescending(p => p.PUBDATE).Take(1).ToDataTable();
                     if (dtc.Rows.Count > 0)
                     {
@@ -113,12 +113,12 @@ namespace NjWap.html
                             txt = dtc.Rows[0]["Text"].ToString();
                         }
 
-                        ltTop.Text = "<li class='first clearfix'><img style='width:85px;height:99px' src='" + url + "/NJ_Stnet/uploadFiles/uploadImgs/contentImg/" + dtc.Rows[0]["IMGURL"].ToString() + "' class='left first_img'></img><div class='right first_content'>"
+                        ltTop.Text = "<li class='first clearfix'><img style='width:85px;height:99px' src='" + url + "/NJ_Stnet/uploadFiles/" + dtc.Rows[0]["IMGURL"].ToString() + "' class='left first_img'></img><div class='right first_content'>"
                                     + "<h3><a href='Detail.aspx?ConId=" + dtc.Rows[0]["CONTENT_ID"].ToString() + "'>" + dtc.Rows[0]["Title"].ToString() + "</a></h3> <p>" + dtc.Rows[0]["Title"].ToString() + "</p></div></li>";
 
                         AspNetPager1.PageSize = 15;
                         int totalRecord = 0;
-                        var eps = DynamicLinqExpressions.True<t_opt_stnet_content>();
+                        var eps = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
                         eps = eps.And(c => c.CID == cateid);
                         eps = eps.And(c => c.CONTENT_ID != ContentId);
                         if (AspNetPager1.CurrentPageIndex > 1)

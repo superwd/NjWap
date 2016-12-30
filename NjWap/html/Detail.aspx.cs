@@ -12,7 +12,7 @@ namespace NjWap.html
     public partial class Detail : System.Web.UI.Page
     {
         BaseRepository<category_show_view> bu = new BaseRepository<category_show_view>();
-        BaseRepository<t_opt_stnet_content> cu = new BaseRepository<t_opt_stnet_content>();
+        BaseRepository<T_OPT_STNET_CONTENT> cu = new BaseRepository<T_OPT_STNET_CONTENT>();
         njEntities nj = new njEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,8 +33,8 @@ namespace NjWap.html
                     //var eps = DynamicLinqExpressions.True<category_show_view>();
                     //eps = eps.And(c => c.CATEGORY_ID == ui.CATEGORY_ID);
                     //DataTable dtc = bu.LoadEntities(eps).ToDataTable();
-                    t_opt_stnet_content tc = nj.t_opt_stnet_content.Where(a => a.CONTENT_ID == Id).FirstOrDefault();
-                    t_info_stnet_category ui = nj.t_info_stnet_category.Where(a => a.CATEGORY_ID == tc.CID).FirstOrDefault();
+                    T_OPT_STNET_CONTENT tc = nj.T_OPT_STNET_CONTENT.Where(a => a.CONTENT_ID == Id).FirstOrDefault();
+                    T_INFO_STNET_CATEGORY ui = nj.T_INFO_STNET_CATEGORY.Where(a => a.CATEGORY_ID == tc.CID).FirstOrDefault();
 
                     ltCon.Text += "<div id='location'><a href='' title='首页' class='CurrChnlCls'>首页</a>&nbsp;&gt;&nbsp;<a href='List.aspx?CID=" + tc.CID + "' title='" + ui.TITLE + "' class='CurrChnlCls'>" + ui.TITLE + "</a></div>";
 

@@ -13,7 +13,7 @@ namespace NjWap.html
     public partial class Index : System.Web.UI.Page
     {
         BaseRepository<category_show_view> bu = new BaseRepository<category_show_view>();
-        BaseRepository<t_opt_stnet_content> cu = new BaseRepository<t_opt_stnet_content>();
+        BaseRepository<T_OPT_STNET_CONTENT> cu = new BaseRepository<T_OPT_STNET_CONTENT>();
         public static int Tcount=0;
         public static string List = "";
         protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace NjWap.html
             {
                 string cateid = ConfigurationManager.AppSettings["SID"];
                 string url = ConfigurationManager.AppSettings["Url"];
-                var epsc = DynamicLinqExpressions.True<t_opt_stnet_content>();
+                var epsc = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
                 epsc = epsc.And(c => c.CID == cateid);
                 DataTable dtc = cu.LoadEntities(epsc).ToDataTable();
                 if (dtc.Rows.Count > 0)
@@ -75,11 +75,12 @@ namespace NjWap.html
         //绑定分类中间部分
         protected void BindBodyMain()
         {
+            string url = ConfigurationManager.AppSettings["Url"];
             try
             {
                 var eps = DynamicLinqExpressions.True<category_show_view>();
-            string cateId= ConfigurationManager.AppSettings["CID"];
-            eps = eps.And(c => c.CATEGORY_ID != cateId);
+                string cateId= ConfigurationManager.AppSettings["CID"];
+                eps = eps.And(c => c.CATEGORY_ID != cateId);
             
                 int count = bu.LoadEntitiesCount(eps);
                 //Tcount = count;
@@ -90,7 +91,7 @@ namespace NjWap.html
                 if (dts.Rows.Count > 0)
                 {
                     cateid = dts.Rows[0]["CATEGORY_ID"].ToString();
-                    var epsc = DynamicLinqExpressions.True<t_opt_stnet_content>();
+                    var epsc = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
                     epsc = epsc.And(c => c.CID == cateid);
                     DataTable dtc = cu.LoadEntities(epsc).ToDataTable();
                     if (dtc.Rows.Count > 0)
@@ -113,7 +114,7 @@ namespace NjWap.html
                                 {
                                     txt = dtc.Rows[i]["Text"].ToString();
                                 }
-                                HeadList += "<li class='first'><a href='Detail.aspx?ConId=" + dtc.Rows[i]["Content_ID"].ToString() + "'><img style='width:85px;height:99px' src='" + dts.Rows[0]["CATEGORY_ID"].ToString() + "'></a><a href='#'><b></b></a>"
+                                HeadList += "<li class='first'><a href='Detail.aspx?ConId=" + dtc.Rows[i]["Content_ID"].ToString() + "'><img style='width:85px;height:99px' src='" + url + "/NJ_Stnet/uploadFiles/" + dtc.Rows[i]["IMGURL"].ToString() + "'></a><a href='#'><b></b></a>"
                                     + "<b> <a href='Detail.aspx?ConId=" + dtc.Rows[i]["Content_ID"].ToString() + "' target='_blank' title='" + dtc.Rows[i]["Title"].ToString() + "'>" + dtc.Rows[i]["Title"].ToString() + "</a></b>"
                                     + "<span class='InfoContent'><br>" + txt + "</span>";
                             }
@@ -153,7 +154,7 @@ namespace NjWap.html
                         for (int j = 0; j < dt2.Rows.Count; j++)
                         {
                             string neirong = "";
-                            var epsc = DynamicLinqExpressions.True<t_opt_stnet_content>();
+                            var epsc = DynamicLinqExpressions.True<T_OPT_STNET_CONTENT>();
                             string CID = dt2.Rows[j]["CATEGORY_ID"].ToString();
                             epsc = epsc.And(c => c.CID == CID);
                             DataTable dt3 = cu.LoadEntities(epsc).OrderByDescending(c => c.PUBDATE).ToDataTable();
