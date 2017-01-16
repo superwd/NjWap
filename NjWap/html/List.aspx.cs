@@ -86,7 +86,8 @@ namespace NjWap.html
                     Response.Redirect("/In/List.aspx");
                     Response.End();
                 }
-                if (cateid == "spdb")
+                string sid = ConfigurationManager.AppSettings["VID"];
+                if (cateid == sid)
                 {
                     Response.Redirect("/vedio/List.aspx");
                     Response.End();

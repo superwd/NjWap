@@ -80,8 +80,9 @@ namespace NjWap.html
             {
                 var eps = DynamicLinqExpressions.True<category_show_view>();
                 string cateId= ConfigurationManager.AppSettings["CID"];
+                string vId = ConfigurationManager.AppSettings["VID"];
                 eps = eps.And(c => c.CATEGORY_ID != cateId);
-            
+                eps = eps.And(c => c.CATEGORY_ID != vId);
                 int count = bu.LoadEntitiesCount(eps);
                 //Tcount = count;
                 IQueryable<category_show_view> result = bu.LoadEntities(eps);
