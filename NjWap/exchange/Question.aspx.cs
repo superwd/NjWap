@@ -35,7 +35,8 @@ namespace NjWap.exchange
                 if (Context.User.Identity.Name != "")
                 {
                     SYS_USER u = nj.SYS_USER.Where(c => c.USER_ID == Context.User.Identity.Name).FirstOrDefault();
-                    lblSf.Text = "您好：【<a href = '/exchange/My.aspx?Id=" + Context.User.Identity.Name + "' >" + u.NAME + "</a>】";
+                    //lblSf.Text = "您好：【<a href = '/exchange/My.aspx?Id=" + Context.User.Identity.Name + "' >" + u.NAME + "</a>】";
+                    lblSf.Text = "您好：【" + u.NAME + "】";
                 }
 
                 if (Request.Cookies["Addr"] != null)
