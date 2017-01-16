@@ -21,14 +21,14 @@ namespace NjWap
         {
             NjWap.Code.Tool tool = new Code.Tool();
             DataTable dt = tool.GetBindHead();
-            DataRow newRow;
-            newRow = dt.NewRow();
-            newRow["MODULE_ID"] = "";
-            newRow["TITLE"] = "视频点播";
-            newRow["DESP"] = "视频点播";
-            newRow["CATEGORY_ID"] = "spdb";
-            newRow["IMGURL"] = "";
-            dt.Rows.Add(newRow);
+            //DataRow newRow;
+            //newRow = dt.NewRow();
+            //newRow["MODULE_ID"] = "";
+            //newRow["TITLE"] = "视频点播";
+            //newRow["DESP"] = "视频点播";
+            //newRow["CATEGORY_ID"] = "spdb";
+            //newRow["IMGURL"] = "";
+            //dt.Rows.Add(newRow);
             if (dt.Rows.Count > 0)
             {
                 rptHead.DataSource = dt;
